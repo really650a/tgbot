@@ -24,3 +24,4 @@ def webhook():
     bot.set_webhook(url='https://tgbot-iota-tan.vercel.app/' + TOKEN)
     return "Hello World!", 200
 
+app.run()
