@@ -1,8 +1,7 @@
-from flask import Flask, request
+from flask import Flask
 
-server = Flask(__name__)
+app = Flask(__name__)
 
-
-@server.route("/")
-def web():
-    return "ok", 200
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
