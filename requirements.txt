@@ -1,2 +1,2 @@
 Flask==2.2.2
-pytelegrambotapi 
+pytelegrambotapi==4.10.0
