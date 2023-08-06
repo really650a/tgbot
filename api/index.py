@@ -22,8 +22,8 @@ def getMessage():
 
 @server.route("/")
 def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url='https://flask.tolasaa.repl.co/' + TOKEN)
+    #bot.remove_webhook()
+    #bot.set_webhook(url='https://flask.tolasaa.repl.co/' + TOKEN)
     return "ok", 200
 
 if __name__ == "__main__":
