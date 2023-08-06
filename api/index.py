@@ -1,14 +1,14 @@
 from flask import Flask, request
-from telebot import Telebot 
-from telebot.types import *
+#from telebot import Telebot 
+#from telebot.types import *
 
-TOKEN = "6457745689:AAGK_N4F-8KPw7zpnGf8NfFZrpTD2RhkotM"
-bot = TeleBot(TOKEN, parse_mode="html")
+#TOKEN = "6457745689:AAGK_N4F-8KPw7zpnGf8NfFZrpTD2RhkotM"
+#bot = TeleBot(TOKEN, parse_mode="html")
 server = Flask(__name__)
 
-@bot.message_handler(commands =["start"])
-def start(message):
-	bot.send_message(message.chat.id, "Hello!")
+#@bot.message_handler(commands =["start"])
+#def start(message):
+	#bot.send_message(message.chat.id, "Hello!")
 
 #@server.route('/' + TOKEN, methods=['POST'])
 #def getMessage():
