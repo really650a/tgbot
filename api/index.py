@@ -21,6 +21,6 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://tgbot-flame.vercel.app/' + TOKEN)
+    bot.set_webhook(url='https://tgbot-iota-tan.vercel.app/' + TOKEN)
     return "Hello World!", 200
 
