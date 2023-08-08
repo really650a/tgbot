@@ -1,29 +1,30 @@
 from flask import Flask, request
-from telebot import TeleBot 
-from telebot.types import *
+from telebot import TeleBot, types
+import json
 
 TOKEN = "5769907387:AAF0tVVa2RNQjFpOeYmRAIWBhzIBa1jFp4E"
 bot = TeleBot(TOKEN, parse_mode="html")
 app = Flask(__name__)
 
-@bot.message_handler(commands =["start"])
+@bot.message_handler(commands=["start"])
 def start(message):
-	return bot.send_message(message.chat.id, "Hello!")
+    bot.send_message(message.chat.id, "Hello!")
 
 @app.route('/' + TOKEN, methods=['POST'])
-def getMessage():
-    update = Update.de_json(request.stream.read().decode('utf-8'))
+def webhook():
+    data = request.stream.read().decode('utf-8')
+    update = types.Update.de_json(data)
+    
     if update.message:
         bot.process_new_messages([update.message])
-        
-    return "Hello World!", 200
+
+    return "OK", 200
 
 @app.route("/")
-def webhook():
+def set_webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://tgbot-46vemn21f-really650a.vercel.app/' + TOKEN)
-    return "Hello World!", 200
+    bot.set_webhook(url='https://your-webhook-url.com/' + TOKEN)
+    return "Webhook set up successfully!", 200
 
 if __name__ == "__main__":
-    app.run()
-
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
