@@ -6,6 +6,10 @@ TOKEN = "5769907387:AAF0tVVa2RNQjFpOeYmRAIWBhzIBa1jFp4E"
 bot = TeleBot(TOKEN, parse_mode="html")
 app = Flask(__name__)
 
+@bot.message_handler(commands =["start"])
+def start(message):
+	return bot.send_message(message.chat.id, "Hello!")
+
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     update = Update.de_json(request.stream.read().decode('utf-8'))
@@ -19,11 +23,6 @@ def webhook():
     bot.remove_webhook()
     bot.set_webhook(url='https://tgbot-gamma-seven.vercel.app/' + TOKEN)
     return "Hello World!", 200
-
-@bot.message_handler(commands =["start"])
-def start(message):
-	return bot.send_message(message.chat.id, "Hello!")
-
 
 if __name__ == "__main__":
     app.run()
