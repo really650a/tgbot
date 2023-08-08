@@ -21,7 +21,7 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://tgbot-gamma-seven.vercel.app/' + TOKEN)
+    bot.set_webhook(url='https://tgbot-46vemn21f-really650a.vercel.app/' + TOKEN)
     return "Hello World!", 200
 
 if __name__ == "__main__":
