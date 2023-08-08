@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @bot.message_handler(commands =["start"])
 def start(message):
-	bot.send_message(message.chat.id, "Hello!")
+	return bot.send_message(message.chat.id, "Hello!")
 
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
@@ -17,10 +17,10 @@ def getMessage():
         bot.process_new_messages([update.message])
         
     return "Hello World!", 200
-
+"""
 @app.route("/")
 def webhook():
     bot.remove_webhook()
     bot.set_webhook(url='https://tgbot-gamma-seven.vercel.app/' + TOKEN)
     return "Hello World!", 200
-
+"""
