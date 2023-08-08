@@ -23,7 +23,7 @@ def webhook():
 @app.route("/")
 def set_webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://your-webhook-url.com/' + TOKEN)
+    bot.set_webhook(url='https://tgbot-46vemn21f-really650a.vercel.app/' + TOKEN)
     return "Webhook set up successfully!", 200
 
 if __name__ == "__main__":
