@@ -3,7 +3,7 @@ from telebot import TeleBot
 from telebot.types import *
 
 TOKEN = "5769907387:AAF0tVVa2RNQjFpOeYmRAIWBhzIBa1jFp4E"
-bot = TeleBot(TOKEN, parse_mode="html", threaded=False)
+bot = TeleBot(TOKEN, parse_mode="html", skip_pending=True)
 app = Flask(__name__)
 
 @bot.message_handler(commands =["start"])
