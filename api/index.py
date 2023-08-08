@@ -17,10 +17,10 @@ def getMessage():
         bot.process_new_messages([update.message])
         
     return "Hello World!", 200
-"""
+
 @app.route("/")
 def webhook():
     bot.remove_webhook()
     bot.set_webhook(url='https://tgbot-gamma-seven.vercel.app/' + TOKEN)
     return "Hello World!", 200
-"""
+
